@@ -74,26 +74,20 @@ client.on('ready', () => {
 
 client.on('message', message => {
 	if (message.content === '!test') {
-		// Send "pong" to the same channel
+		// Send "Test bestanden." to the same channel
 		message.channel.send('Test bestanden.');
 	}
-//	else if (message.content === 'du sack') {
-//		// Send "pong" to the same channel
-//		message.channel.send('hier!');
-//	}
-//	else if (message.content === 'jetzt verstehen wir uns') {
-//		// Send "pong" to the same channel
-//		message.channel.send('klarikovsky babydoll');
-//	}
-//	else if (message.content === 'Wann ist mein Geburtstag?') {
-//		// Send "pong" to the same channel
-//		var msg = evaluateBirthday(message.author.username);
-//		message.channel.send(msg);
-//	}
-//	else if (message.content === 'gute nacht, burzelgert') {
-//		// Send "pong" to the same channel
-//		message.channel.send("nachti");
-//	}
+	else if (message.content === '!geburtstage') {
+		// Send a list of all birthdays to the same channel
+		var output = "";
+		for (i = 0; i < birthdays.length; i++){
+			var name = birthdays[i].Name;
+			var day = birthdays[i].Day;
+			var month = birthdays[i].Month;
+			output.concat("**" + name +"**: " + day + "." + month + ".\n")
+		}
+		message.channel.send(output);
+	}
 });
 
 client.login(process.env.BOT_TOKEN);
