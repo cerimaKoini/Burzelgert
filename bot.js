@@ -3,7 +3,7 @@ var client = new Discord.Client();
 
 var birthdays = [
 	{
-		Name: "Kerry 🌙",
+		Name: "Kerry",
 		Day: 4,
 		Month: 1
 	},
@@ -73,40 +73,40 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-	if (message.content === 'ping') {
-		// Send "pong" to the same channel
-		message.channel.send('pong');
-	}
-	else if (message.content === 'du sack') {
-		// Send "pong" to the same channel
-		message.channel.send('hier!');
-	}
-	else if (message.content === 'jetzt verstehen wir uns') {
-		// Send "pong" to the same channel
-		message.channel.send('klarikovsky babydoll');
-	}
-	else if (message.content === 'Wann ist mein Geburtstag?') {
-		// Send "pong" to the same channel
-		var msg = evaluateBirthday(message.author.username);
-		message.channel.send(msg);
-	}
-	else if (message.content === 'gute nacht, burzelgert') {
-		// Send "pong" to the same channel
-		message.channel.send("nachti");
-	}
+//	if (message.content === 'ping') {
+//		// Send "pong" to the same channel
+//		message.channel.send('pong');
+//	}
+//	else if (message.content === 'du sack') {
+//		// Send "pong" to the same channel
+//		message.channel.send('hier!');
+//	}
+//	else if (message.content === 'jetzt verstehen wir uns') {
+//		// Send "pong" to the same channel
+//		message.channel.send('klarikovsky babydoll');
+//	}
+//	else if (message.content === 'Wann ist mein Geburtstag?') {
+//		// Send "pong" to the same channel
+//		var msg = evaluateBirthday(message.author.username);
+//		message.channel.send(msg);
+//	}
+//	else if (message.content === 'gute nacht, burzelgert') {
+//		// Send "pong" to the same channel
+//		message.channel.send("nachti");
+//	}
 });
 
 client.login(process.env.BOT_TOKEN);
 
-function evaluateBirthday(name) {
-	for (i = 0; i < birthdays.length; i++){
-		console.log(birthdays[i].Name + "_third");
-		if (birthdays[i].Name == name){
-			return "@" + name + ", dein Geburtstag ist am " + birthdays[i].Day + "." + birthdays[i].Month + ".";
-		}
-		else{
-			return "häh?";
-		}
-		
-	}
-}
+//function evaluateBirthday(name) {
+//	for (i = 0; i < birthdays.length; i++){
+//		console.log(birthdays[i].Name + "_third");
+//		if (birthdays[i].Name == name){
+//			return "@" + name + ", dein Geburtstag ist am " + birthdays[i].Day + "." + birthdays[i].Month + ".";
+//		}
+//		else{
+//			return "häh?";
+//		}
+//		
+//	}
+//}
