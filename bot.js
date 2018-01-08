@@ -79,6 +79,7 @@ client.on('message', message => {
 	}
 	else if (message.content === '!geburtstage') {
 		// Send a list of all birthdays to the same channel
+		message.channel.send("Hier die Geburtstage der Wattebällchen im Überblick:");
 		for (i = 0; i < birthdays.length; i++){
 			message.channel.send("**" + birthdays[i].Name + "** - " + birthdays[i].Day + "." + birthdays[i].Month + ".\n");
 		}
