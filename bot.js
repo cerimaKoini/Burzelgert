@@ -79,14 +79,9 @@ client.on('message', message => {
 	}
 	else if (message.content === '!geburtstage') {
 		// Send a list of all birthdays to the same channel
-		var output = "";
 		for (i = 0; i < birthdays.length; i++){
-			var name = birthdays[i].Name;
-			var day = birthdays[i].Day;
-			var month = birthdays[i].Month;
-			output.concat("**" + name +"**: " + day + "." + month + ".\n");
+			message.channel.send("**" + birthdays[i].Name +"**: " + birthdays[i].Day + "." + birthdays[i].Month + ".");
 		}
-		message.channel.send(output);
 	}
 });
 
