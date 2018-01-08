@@ -84,7 +84,7 @@ client.on('message', message => {
 			var name = birthdays[i].Name;
 			var day = birthdays[i].Day;
 			var month = birthdays[i].Month;
-			output.concat("**" + name +"**: " + day + "." + month + ".\n")
+			output.concat("**" + name +"**: " + day + "." + month + ".\n");
 		}
 		message.channel.send(output);
 	}
