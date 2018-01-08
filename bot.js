@@ -73,10 +73,10 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-//	if (message.content === 'ping') {
-//		// Send "pong" to the same channel
-//		message.channel.send('pong');
-//	}
+	if (message.content === '!test') {
+		// Send "pong" to the same channel
+		message.channel.send('Test bestanden.');
+	}
 //	else if (message.content === 'du sack') {
 //		// Send "pong" to the same channel
 //		message.channel.send('hier!');
