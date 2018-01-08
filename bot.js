@@ -80,7 +80,7 @@ client.on('message', message => {
 	else if (message.content === '!geburtstage') {
 		// Send a list of all birthdays to the same channel
 		for (i = 0; i < birthdays.length; i++){
-			message.channel.send(birthdays[i].Name + birthdays[i].Day + birthdays[i].Month);
+			message.channel.send("**" + birthdays[i].Name + "** - " + birthdays[i].Day + "." + birthdays[i].Month + ".\n");
 		}
 	}
 });
