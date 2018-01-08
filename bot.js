@@ -1,5 +1,4 @@
 var Discord = require('discord.js');
-var auth = require('./auth.json');
 var client = new Discord.Client();
 
 var birthdays = [
@@ -97,7 +96,7 @@ client.on('message', message => {
 	}
 });
 
-client.login(auth.token);
+client.login(process.env.BOT_TOKEN);
 
 function evaluateBirthday(name) {
 	for (i = 0; i < birthdays.length; i++){
