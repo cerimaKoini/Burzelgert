@@ -64,12 +64,12 @@ client.on('ready', () => {
 	var currentDay = new Date(Date.now()).getDate();
 	var currentMonth = new Date(Date.now()).getMonth()+1;
 	
-	for (i = 0; i < birthdays.length; i++){
-		if (birthdays[i].Day == currentDay && birthdays[i].Month == currentMonth){
-			var channel = client.channels.find('name', 'bot-spielwiese');
-			channel.send("Alles Gute zum Geburtstag, " + birthdays[i].Name + "! :heart:");
-		}
-	}
+//	for (i = 0; i < birthdays.length; i++){
+//		if (birthdays[i].Day == currentDay && birthdays[i].Month == currentMonth){
+//			var channel = client.channels.find('name', 'bot-spielwiese');
+//			channel.send("Alles Gute zum Geburtstag, " + birthdays[i].Name + "! :heart:");
+//		}
+//	}
 });
 
 client.on('message', message => {
@@ -80,7 +80,7 @@ client.on('message', message => {
 	else if (message.content === '!geburtstage') {
 		// Send a list of all birthdays to the same channel
 		for (i = 0; i < birthdays.length; i++){
-			message.channel.send("**" + birthdays[i].Name +"**: " + birthdays[i].Day + "." + birthdays[i].Month + ".");
+			message.channel.send(birthdays[i].Name + birthdays[i].Day + birthdays[i].Month);
 		}
 	}
 });
