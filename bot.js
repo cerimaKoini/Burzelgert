@@ -68,7 +68,7 @@ client.on('ready', () => {
 	var channel = client.channels.find('name', 'bot-spielwiese');
 	
 	// Creating a new job
-	var date = (2018, 0, 9, 23, 56); // (year, month, day, hour, minute)
+	var date = (2018, 0, 10, 0, 0); // (year, month, day, hour, minute)
 	var job = schedule.scheduleJob(date, function() {
 		channel.send("Successfully sended a scheduled message! Hooray!");
 	});
