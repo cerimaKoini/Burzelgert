@@ -1,6 +1,17 @@
 var Discord = require('discord.js');
 var client = new Discord.Client();
 
+// Define a new schedule
+var sched = later.parse.recur()
+	.on('23:21:00').time().on(9).dayOfMonth().on(1).month();
+
+function writeToChannel() {
+	var channel = client.channels.find('name', 'bot-spielwiese');
+	channel.send(textSched);
+}
+
+var timer = later.setTimeout(writeToChannel, sched);
+
 var birthdays = [
 	{
 		Name: "Kerry",
@@ -56,11 +67,6 @@ var birthdays = [
 		Name: "Nadja",
 		Day: 10,
 		Month: 12
-	},
-	{
-		Name: "Testuser",
-		Day: 8,
-		Month: 1
 	}
 ];
 
