@@ -60,7 +60,7 @@ var birthdays = [
 	}
 ];
 
-client.login(process.env.BOT_TOKEN);
+
 
 client.on('ready', () => {
 	console.log('I am ready!');
@@ -75,8 +75,6 @@ client.on('ready', () => {
 		channel.send("Successfully sent a scheduled message! Hooray!");
 	});
 	
-	job.cancel(true);
-	
 //	for (i = 0; i < birthdays.length; i++){
 //		if (birthdays[i].Day == currentDay && birthdays[i].Month == currentMonth){
 //			var channel = client.channels.find('name', 'bot-spielwiese');
@@ -84,6 +82,8 @@ client.on('ready', () => {
 //		}
 //	}
 });
+
+client.login(process.env.BOT_TOKEN);
 
 client.on('message', message => {
 	if (message.content === '!test') {
