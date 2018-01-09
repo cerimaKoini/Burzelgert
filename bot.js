@@ -70,9 +70,12 @@ client.on('ready', () => {
 	var channel = client.channels.find('name', 'bot-spielwiese');
 	
 	// Creating a new job
-	var date = (2018, 0, 10, 0, 5); // (year, month, day, hour, minute)
-	var job = schedule.scheduleJob('* * * * *', function() {
-		channel.send("Successfully sent a scheduled message! Hooray!");
+//	var date = (2018, 0, 10, 0, 5); // (year, month, day, hour, minute)
+	var rule = new schedule.RecurrenceRule();
+	rule.minute = 0;
+	rule.hour = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+	var job = schedule.scheduleJob(rule, function() {
+		channel.send("Successfully sent an hourly scheduled message! Hooray!");
 	});
 	
 //	for (i = 0; i < birthdays.length; i++){
