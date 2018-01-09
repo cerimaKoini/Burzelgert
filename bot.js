@@ -7,7 +7,7 @@ var sched = later.parse.recur()
 
 function writeToChannel() {
 	var channel = client.channels.find('name', 'bot-spielwiese');
-	channel.send(textSched);
+	channel.send("Sending a scheduled message.");
 }
 
 var timer = later.setTimeout(writeToChannel, sched);
