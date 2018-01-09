@@ -79,10 +79,24 @@ client.on('message', message => {
 	}
 	else if (message.content === '!geburtstage') {
 		// Send a list of all birthdays to the same channel
-		message.channel.send("Hier die Geburtstage der Wattebällchen im Überblick:");
+		var lines = "";
 		for (i = 0; i < birthdays.length; i++){
-			message.channel.send("**" + birthdays[i].Name + "** - " + birthdays[i].Day + "." + birthdays[i].Month + ".\n");
+			lines = lines + "**" + birthdays[i].Name + "** - " + birthdays[i].Day + "." + birthdays[i].Month + ".\n";
 		}
+		message.channel.send({embed: {
+			color: 15105570, //orange
+			title: "Flauschige Geburtstage",
+		    	description: "Hier siehst du die Geburtstage der Wättebällchen im Überblick.",
+		    	fields: [{
+					name: "Markdown",
+					value: lines;
+				}
+			],
+		    	timestamp: new Date(),
+		    	footer: {
+		      		text: "© Burzelgert"
+		    	}
+		}});
 	}
 });
 
