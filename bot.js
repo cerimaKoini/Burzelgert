@@ -69,7 +69,7 @@ client.on('ready', () => {
 	
 	// Creating a new job
 	var date = (2018, 0, 10, 0, 5); // (year, month, day, hour, minute)
-	var job = schedule.scheduleJob('1 * * * * *', function() {
+	var job = schedule.scheduleJob('* * * * *', function() {
 		channel.send("Successfully sent a scheduled message! Hooray!");
 	});
 	
