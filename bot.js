@@ -60,6 +60,8 @@ var birthdays = [
 	}
 ];
 
+client.login(process.env.BOT_TOKEN);
+
 client.on('ready', () => {
 	console.log('I am ready!');
 	var currentDay = new Date(Date.now()).getDate();
@@ -101,8 +103,6 @@ client.on('message', message => {
 		}});
 	}
 });
-
-client.login(process.env.BOT_TOKEN);
 
 //function evaluateBirthday(name) {
 //	for (i = 0; i < birthdays.length; i++){
