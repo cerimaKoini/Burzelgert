@@ -78,7 +78,7 @@ client.on('message', message => {
 		message.channel.send('Test bestanden.');
 	}
 	else if (message.content === '!geburtstage') {
-		// Send a list of all birthdays to the same channel
+		// Send an embedded list of all birthdays to the same channel
 //		var lines = "";
 //		for (i = 0; i < birthdays.length; i++){
 //			lines = lines + "**" + birthdays[i].Name + "** - " + birthdays[i].Day + "." + birthdays[i].Month + ".\n";
@@ -86,7 +86,7 @@ client.on('message', message => {
 		message.channel.send({embed: {
 			color: 15105570, //orange
 			title: "Hier siehst du die Geburtstage der Wättebällchen im Überblick.",
-		    	description: "Huhu"
+		    	description: birthdays[0].Name + "\n" + birthdays[1].Name
 		}});
 	}
 });
