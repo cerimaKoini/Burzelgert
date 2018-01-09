@@ -86,7 +86,7 @@ client.on('message', message => {
 		message.channel.send({embed: {
 			color: 15105570, //orange
 			title: "Hier siehst du die Geburtstage der Wättebällchen im Überblick.",
-		    	description: birthdays[0].Name + "\n" + birthdays[1].Name
+		    	description: "**Kerry** - 4.1. \n **Sonja** - 12.2."
 		}});
 	}
 });
