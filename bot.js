@@ -1,9 +1,10 @@
 var Discord = require('discord.js');
 var client = new Discord.Client();
+var later = require('later');
 
 // Define a new schedule
 var sched = later.parse.recur()
-	.on('23:21:00').time().on(9).dayOfMonth().on(1).month();
+	.on('23:24:00').time().on(9).dayOfMonth().on(1).month();
 
 function writeToChannel() {
 	var channel = client.channels.find('name', 'bot-spielwiese');
