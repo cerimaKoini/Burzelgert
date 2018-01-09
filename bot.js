@@ -85,17 +85,8 @@ client.on('message', message => {
 		}
 		message.channel.send({embed: {
 			color: 15105570, //orange
-			title: "Flauschige Geburtstage",
-		    	description: "Hier siehst du die Geburtstage der Wättebällchen im Überblick.",
-		    	fields: [{
-					name: "Markdown",
-					value: lines;
-				}
-			],
-		    	timestamp: new Date(),
-		    	footer: {
-		      		text: "© Burzelgert"
-		    	}
+			title: "Hier siehst du die Geburtstage der Wättebällchen im Überblick.",
+		    	description: lines
 		}});
 	}
 });
