@@ -69,9 +69,11 @@ client.on('ready', () => {
 	
 	// Creating a new job
 	var date = (2018, 0, 10, 0, 5); // (year, month, day, hour, minute)
-	var job = schedule.scheduleJob(date, function() {
-		channel.send("Successfully sended a scheduled message! Hooray!");
+	var job = schedule.scheduleJob('1 * * * * *', function() {
+		channel.send("Successfully sent a scheduled message! Hooray!");
 	});
+	
+	job.cancel(true);
 	
 //	for (i = 0; i < birthdays.length; i++){
 //		if (birthdays[i].Day == currentDay && birthdays[i].Month == currentMonth){
