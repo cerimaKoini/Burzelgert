@@ -79,14 +79,14 @@ client.on('message', message => {
 	}
 	else if (message.content === '!geburtstage') {
 		// Send a list of all birthdays to the same channel
-		var lines = "";
-		for (i = 0; i < birthdays.length; i++){
-			lines = lines + "**" + birthdays[i].Name + "** - " + birthdays[i].Day + "." + birthdays[i].Month + ".\n";
-		}
+//		var lines = "";
+//		for (i = 0; i < birthdays.length; i++){
+//			lines = lines + "**" + birthdays[i].Name + "** - " + birthdays[i].Day + "." + birthdays[i].Month + ".\n";
+//		}
 		message.channel.send({embed: {
 			color: 15105570, //orange
 			title: "Hier siehst du die Geburtstage der Wättebällchen im Überblick.",
-		    	description: lines
+		    	description: "Huhu"
 		}});
 	}
 });
