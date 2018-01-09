@@ -1,17 +1,6 @@
 var Discord = require('discord.js');
 var client = new Discord.Client();
-var later = require('later');
-
-// Define a new schedule
-var sched = later.parse.recur()
-	.on('23:24:00').time().on(9).dayOfMonth().on(1).month();
-
-function writeToChannel() {
-	var channel = client.channels.find('name', 'bot-spielwiese');
-	channel.send("Sending a scheduled message.");
-}
-
-var timer = later.setTimeout(writeToChannel, sched);
+var schedule = require('node-schedule');
 
 var birthdays = [
 	{
@@ -75,6 +64,14 @@ client.on('ready', () => {
 	console.log('I am ready!');
 	var currentDay = new Date(Date.now()).getDate();
 	var currentMonth = new Date(Date.now()).getMonth()+1;
+	
+	var channel = client.channels.find('name', 'bot-spielwiese');
+	
+	// Creating a new job
+	var date = (2018, 0, 10, 0, 0); // (year, month, day, hour, minute)
+	var job = schedule.scheduleJob(date, function() {
+		channel.send("Successfully sended a scheduled message! Hooray!");
+	});
 	
 //	for (i = 0; i < birthdays.length; i++){
 //		if (birthdays[i].Day == currentDay && birthdays[i].Month == currentMonth){
