@@ -1,6 +1,6 @@
 var Discord = require('discord.js');
 var client = new Discord.Client();
-var schedule = require('node-schedule');
+const CronJob = require('cron').CronJob;
 
 var channel = client.channels.find('name', 'bot-spielwiese');
 
@@ -13,7 +13,7 @@ var birthdays = [
 	},
 	{
 		Name: "Kerry 🌙",
-		Cron: '10 0 11 1 *',
+		Cron: '28 0 11 1 *',
 		Day: 12,
 		Month: 2
 	},
@@ -87,14 +87,9 @@ client.on('ready', () => {
 	var currentMonth = new Date(Date.now()).getMonth()+1;
 	
 	// Creating a new job
-//	var date = (2018, 0, 10, 0, 5); // (year, month, day, hour, minute)
-//	var rule = new schedule.RecurrenceRule();
-//	rule.minute = 0;
-//	rule.hour = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-	var initial = schedule.scheduleJob
-	var k = schedule.scheduleJob(birthdays[1].Cron, function() {
+	const cron1 = new CronJob(birthdays[1].Cron, function () {
 		wishesTo(birthdays[1].Name);
-	});
+	}, null, true, 'Europe/Vienna');
 	
 	
 	
