@@ -6,73 +6,73 @@ var channel = client.channels.find('name', 'bot-spielwiese');
 
 var birthdays = [
 	{
-		Name: "Kerry 🌙",
+		UserId: "219918618278756352",
 		Cron: '0 8 4 1 *',
 		Day: 4,
 		Month: 1
 	},
 	{
-		Name: "Kerry 🌙",
+		UserId: "219918618278756352",
 		Cron: '35 0 11 1 *',
 		Day: 12,
 		Month: 2
 	},
 	{
-		Name: "Sonnus",
+		UserId: "Sonnus",
 		Cron: '0 8 12 2 *',
 		Day: 12,
 		Month: 2
 	},
 	{
-		Name: "Sambin",
+		UserId: "Sambin",
 		Cron: '0 8 13 2 *',
 		Day: 13,
 		Month: 2
 	},
 	{
-		Name: "1973roland",
+		UserId: "1973roland",
 		Cron: '0 8 22 2 *',
 		Day: 22,
 		Month: 2
 	},
 	{
-		Name: "Darthod",
+		UserId: "Darthod",
 		Cron: '0 8 12 3 *',
 		Day: 12,
 		Month: 3
 	},
 	{
-		Name: "Hyean",
+		UserId: "Hyean",
 		Cron: '0 8 20 3 *',
 		Day: 20,
 		Month: 3
 	},
 	{
-		Name: "Macgoon",
+		UserId: "Macgoon",
 		Cron: '0 8 8 6 *',
 		Day: 8,
 		Month: 6
 	},
 	{
-		Name: "Sabios",
+		UserId: "Sabios",
 		Cron: '0 8 22 7 *',
 		Day: 22,
 		Month: 7
 	},
 	{
-		Name: "Nina",
+		UserId: "Nina",
 		Cron: '0 8 12 9 *',
 		Day: 12,
 		Month: 9
 	},
 	{
-		Name: "Micha",
+		UserId: "Micha",
 		Cron: '0 8 10 10 *',
 		Day: 10,
 		Month: 10
 	},
 	{
-		Name: "Pigwedgon",
+		UserId: "Pigwedgon",
 		Cron: '0 8 10 12 *',
 		Day: 10,
 		Month: 12
@@ -88,7 +88,7 @@ client.on('ready', () => {
 	
 	// Creating a new job
 	const cron1 = new CronJob(birthdays[1].Cron, function () {
-		channel.send("@" + birthdays[1].Name + " , alles Gute zum Geburtstag.");
+		channel.send("<@" + birthdays[1].UserId + ">, alles Gute zum Geburtstag.");
 	});
 	
 	
@@ -106,7 +106,7 @@ client.login(process.env.BOT_TOKEN);
 client.on('message', message => {
 	if (message.content === '!test') {
 		// Send "Test bestanden." to the same channel
-		message.channel.send("@" + birthdays[1].Name + ' : Test bestanden.');
+		message.channel.send("<@" + birthdays[1].UserId + '>: Test bestanden.');
 	}
 	else if (message.content === '!geburtstage') {
 		// Send an embedded list of all birthdays to the same channel
