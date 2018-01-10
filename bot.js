@@ -13,7 +13,7 @@ var birthdays = [
 	},
 	{
 		UserId: "219918618278756352", //kerry
-		Cron: '35 0 11 1 *',
+		Cron: '50 0 11 1 *',
 		Day: 12,
 		Month: 2
 	},
