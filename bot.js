@@ -88,7 +88,7 @@ client.on('ready', () => {
 	
 	// Creating a new job
 	const cron1 = new CronJob(birthdays[1].Cron, function () {
-		wishesTo(birthdays[1].Name);
+		channel.send("@" + birthdays[1].Name + ", alles Gute zum Geburtstag.");
 	}, null, true, 'Europe/Vienna');
 	
 	
@@ -106,7 +106,7 @@ client.login(process.env.BOT_TOKEN);
 client.on('message', message => {
 	if (message.content === '!test') {
 		// Send "Test bestanden." to the same channel
-		message.channel.send('Test bestanden.');
+		message.channel.send("@" + birthdays[1].Name + 'Test bestanden.');
 	}
 	else if (message.content === '!geburtstage') {
 		// Send an embedded list of all birthdays to the same channel
