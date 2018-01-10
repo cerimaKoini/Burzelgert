@@ -6,13 +6,13 @@ var channel = client.channels.find('name', 'bot-spielwiese');
 
 var birthdays = [
 	{
-		UserId: "219918618278756352",
+		UserId: "219918618278756352", //kerry
 		Cron: '0 8 4 1 *',
 		Day: 4,
 		Month: 1
 	},
 	{
-		UserId: "219918618278756352", //kerry
+		UserId: "219918618278756352", 
 		Cron: '50 0 11 1 *',
 		Day: 12,
 		Month: 2
@@ -87,8 +87,12 @@ client.on('ready', () => {
 	var currentMonth = new Date(Date.now()).getMonth()+1;
 	
 	// Creating a new job
-	const cron1 = new CronJob(birthdays[1].Cron, function () {
-		channel.send("<@" + birthdays[1].UserId + ">, alles Gute zum Geburtstag.");
+	const cron1 = new CronJob({
+		cronTime: '55 0 11 1 *',
+		onTick: function () {
+		channel.send("<@219918618278756352>, alles Gute zum Geburtstag.");
+		},
+		start: false
 	});
 	cron1.start();
 	
