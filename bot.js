@@ -13,7 +13,7 @@ var birthdays = [
 	},
 	{
 		UserId: "219918618278756352", 
-		Cron: '50 0 11 1 *',
+		Cron: '59 0 11 1 *',
 		Day: 12,
 		Month: 2
 	},
@@ -90,9 +90,10 @@ client.on('ready', () => {
 	const cron1 = new CronJob({
 		cronTime: '55 0 11 1 *',
 		onTick: function () {
-		channel.send("<@219918618278756352>, alles Gute zum Geburtstag.");
+			channel.send("<@219918618278756352>, alles Gute zum Geburtstag.");
 		},
-		start: false
+		start: false,
+		timeZone: 'Europe/Vienna'
 	});
 	cron1.start();
 	
