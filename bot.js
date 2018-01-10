@@ -91,6 +91,7 @@ client.on('ready', () => {
 //	var rule = new schedule.RecurrenceRule();
 //	rule.minute = 0;
 //	rule.hour = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+	var initial = schedule.scheduleJob
 	var k = schedule.scheduleJob(birthdays[1].Cron, function() {
 		wishesTo(birthdays[1].Name);
 	});
