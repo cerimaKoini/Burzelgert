@@ -29,7 +29,7 @@ var birthdays = [
 	},
 	{
 		Name: "Darthod",
-		Cron:'0 8 12 3 *',
+		Cron: '0 8 12 3 *',
 		Day: 12,
 		Month: 3
 	},
@@ -41,19 +41,19 @@ var birthdays = [
 	},
 	{
 		Name: "Macgoon",
-		Cron:'0 8 8 6 *',
+		Cron: '0 8 8 6 *',
 		Day: 8,
 		Month: 6
 	},
 	{
 		Name: "Sabios",
-		Cron:'0 8 22 7 *',
+		Cron: '0 8 22 7 *',
 		Day: 22,
 		Month: 7
 	},
 	{
 		Name: "Nina",
-		Cron:'0 8 12 9 *',
+		Cron: '0 8 12 9 *',
 		Day: 12,
 		Month: 9
 	},
@@ -65,7 +65,7 @@ var birthdays = [
 	},
 	{
 		Name: "Pigwedgon",
-		Cron:'0 8 10 12 *',
+		Cron: '0 8 10 12 *',
 		Day: 10,
 		Month: 12
 	}
@@ -82,9 +82,9 @@ client.on('ready', () => {
 	
 	// Creating a new job
 //	var date = (2018, 0, 10, 0, 5); // (year, month, day, hour, minute)
-	/*var rule = new schedule.RecurrenceRule();
+	var rule = new schedule.RecurrenceRule();
 	rule.minute = 0;
-	rule.hour = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];*/
+	rule.hour = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 	var job = schedule.scheduleJob(rule, function() {
 		channel.send("Successfully sent an hourly scheduled message! Hooray!");
 	});
