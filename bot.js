@@ -80,12 +80,6 @@ var birthdays = [
 
 
 client.on('ready', () => {
-	console.log('I am ready!');
-	var currentDay = new Date(Date.now()).getDate();
-	var currentMonth = new Date(Date.now()).getMonth()+1;
-	var currentMinute = new Date(Date.now()).getMinute();
-	var currentHour = new Date(Date.now()).getHour();
-	
 	var channel = client.channels.find('name', 'bot-spielwiese');
 	channel.send("Bereit.");
 	
