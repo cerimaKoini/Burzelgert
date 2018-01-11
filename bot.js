@@ -2,8 +2,6 @@ var Discord = require('discord.js');
 var client = new Discord.Client();
 const CronJob = require('cron').CronJob;
 
-var channel = client.channels.find('name', 'bot-spielwiese');
-
 var birthdays = [
 	{
 		UserId: "219918618278756352", //kerry
@@ -13,7 +11,7 @@ var birthdays = [
 	},
 	{
 		UserId: "219918618278756352", 
-		Cron: '59 0 11 1 *',
+		Cron: '5 1 11 1 *',
 		Day: 12,
 		Month: 2
 	},
@@ -87,13 +85,13 @@ client.on('ready', () => {
 	var currentMonth = new Date(Date.now()).getMonth()+1;
 	
 	// Creating a new job
-	const cron1 = new CronJob({
+	var cron1 = new CronJob({
 		cronTime: '55 0 11 1 *',
 		onTick: function () {
+			var channel = client.channels.find('name', 'bot-spielwiese');
 			channel.send("<@219918618278756352>, alles Gute zum Geburtstag.");
 		},
-		start: false,
-		timeZone: 'Europe/Vienna'
+		start: false
 	});
 	cron1.start();
 	
