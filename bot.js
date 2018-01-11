@@ -84,9 +84,12 @@ client.on('ready', () => {
 	var currentDay = new Date(Date.now()).getDate();
 	var currentMonth = new Date(Date.now()).getMonth()+1;
 	
+	var channel = client.channels.find('name', 'bot-spielwiese');
+	channel.send("Bereit.");
+	
 	// Creating a new job
 	var job1 = new cron.CronJob({
-		cronTime: '0 5 2 * * *',
+		cronTime: '8 2 * * *',
 		onTick: function() {
 			var channel = client.channels.find('name', 'bot-spielwiese');
 			channel.send("<@219918618278756352>, alles Gute zum Geburtstag.");
