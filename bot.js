@@ -113,7 +113,7 @@ client.login(process.env.BOT_TOKEN);
 client.on('message', message => {
 	if (message.content === '!test') {
 		// Send "Test bestanden." to the same channel
-		message.channel.send("<@" + birthdays[1].UserId + ">: Test bestanden.");
+		message.channel.send("Test bestanden.");
 	}
 	else if (message.content === '!geburtstage') {
 		// Send an embedded list of all birthdays to the same channel
