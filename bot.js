@@ -105,7 +105,7 @@ client.on('ready', () => {
 	channel.send('Burzelgert initialized. Waiting for commands.');
 	channel.send('Creating schedule for cottonballs\' birthdays.');
     
-	for (i = 0; i < testdates.length; i++){
+	for (var i = 0; i < testdates.length; i++){
 		// Creating a new job
 		var job = new cron.CronJob({
 			cronTime: testdates[i].Cron,
@@ -137,7 +137,7 @@ client.on('message', message => {
 		// Send an embedded list of all birthdays to the same channel
         	message.channel.send("Command detected. Fetching cottonballs\' birthdays.");
 		var lines = "";
-		for (i = 0; i < testdates.length; i++){
+		for (var i = 0; i < testdates.length; i++){
 			lines += "<@" + testdates[i].UserId + "> - " + testdates[i].Day + "." + testdates[i].Month + ".\n";
 		}
 		message.channel.send({embed: {
