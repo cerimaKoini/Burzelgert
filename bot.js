@@ -86,7 +86,7 @@ client.on('ready', () => {
 	
 	// Creating a new job
 	var cron1 = new CronJob({
-		cronTime: '00 16 01 11 01 *',
+		cronTime: '0 18 1 11 1 *',
 		onTick: function () {
 			var channel = client.channels.find('name', 'bot-spielwiese');
 			channel.send("<@219918618278756352>, alles Gute zum Geburtstag.");
