@@ -89,15 +89,14 @@ client.on('ready', () => {
 	
 	// Creating a new job
 	var job1 = new cron.CronJob({
-		cronTime: '8 2 * * *',
+		cronTime: '0 11 2 * *',
 		onTick: function() {
-			var channel = client.channels.find('name', 'bot-spielwiese');
 			channel.send("<@219918618278756352>, alles Gute zum Geburtstag.");
 		},
 		start: false
 	});
 	job1.start();
-	
+	channel.send("Job gestartet.");
 	
 //	for (i = 0; i < birthdays.length; i++){
 //		if (birthdays[i].Day == currentDay && birthdays[i].Month == currentMonth){
