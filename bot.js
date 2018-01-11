@@ -83,13 +83,15 @@ client.on('ready', () => {
 	console.log('I am ready!');
 	var currentDay = new Date(Date.now()).getDate();
 	var currentMonth = new Date(Date.now()).getMonth()+1;
+	var currentMinute = new Date(Date.now()).getMinute();
+	var currentHour = new Date(Date.now()).getHour();
 	
 	var channel = client.channels.find('name', 'bot-spielwiese');
 	channel.send("Bereit.");
 	
 	// Creating a new job
 	var job1 = new cron.CronJob({
-		cronTime: '0 14 2 * * *',
+		cronTime: '14 2 * * *',
 		onTick: function() {
 			channel.send("<@219918618278756352>, alles Gute zum Geburtstag.");
 		},
@@ -115,15 +117,16 @@ client.on('message', message => {
 	}
 	else if (message.content === '!geburtstage') {
 		// Send an embedded list of all birthdays to the same channel
-//		var lines = "";
-//		for (i = 0; i < birthdays.length; i++){
-//			lines = lines + "**" + birthdays[i].Name + "** - " + birthdays[i].Day + "." + birthdays[i].Month + ".\n";
-//		}
+		var lines = "";
+		for (i = 0; i < birthdays.length; i++){
+			lines += "**" + birthdays[i].UserId + "** - " + birthdays[i].Day + "." + birthdays[i].Month + ".\n";
+		}
 		message.channel.send({embed: {
 			color: 15105570, //orange
-			title: "Hier siehst du die Geburtstage der Wättebällchen im Überblick.",
-		    	description: "**Kerry** - 4.1.\n**Sonja** - 12.2.\n**Christa** - 13.2.\n**Roland** - 22.2.\n**Dennis** - 12.3.\n**Micha3** - 20.3.\n**Ingo** - 8.6.\n**Franz** - 22.7.\n**Nina** - 12.9.\n**Micha** - 10.10.\n**Nadja** - 10.12."
+			title: "Hier siehst du die Geburtstage der Wättebällchen im Überblick:",
+		    	description: lines
 		}});
+        	console.log(lines);
 	}
 });
 
