@@ -75,25 +75,25 @@ var birthdays = [
 var testdates = [
 	{
 		UserId: "219918618278756352",
-		Cron: '0 8 11 1 *',
+		Cron: '0 8 11 0 *',
 		Day: 10,
 		Month: 12
 	},
 	{
         	UserId: "219918618278756352",
-		Cron: '30 4 11 1 *',
+		Cron: '15 5 11 0 *',
 		Day: 10,
 		Month: 12
 	},
 	{
         	UserId: "219918618278756352",
-		Cron: '55 4 11 1 *',
+		Cron: '55 4 11 0 *',
 		Day: 10,
 		Month: 12
 	},
 	{
         	UserId: "219918618278756352",
-		Cron: '40 4 11 1 *',
+		Cron: '50 4 11 0 *',
 		Day: 10,
 		Month: 12
 	}
