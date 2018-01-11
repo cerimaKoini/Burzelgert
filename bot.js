@@ -89,7 +89,7 @@ client.on('ready', () => {
 	
 	// Creating a new job
 	var job1 = new cron.CronJob({
-		cronTime: '0 11 2 * *',
+		cronTime: '0 14 2 * * *',
 		onTick: function() {
 			channel.send("<@219918618278756352>, alles Gute zum Geburtstag.");
 		},
