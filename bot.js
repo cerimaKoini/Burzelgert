@@ -87,7 +87,7 @@ var testdates = [
 	},
 	{
         	UserId: "219918618278756352",
-		Cron: '45 3 11 0 *',
+		Cron: '55 3 11 0 *',
 		Day: 10,
 		Month: 12
 	},
@@ -106,17 +106,17 @@ client.on('ready', () => {
 	channel.send('Creating schedule for cottonballs\' birthdays.');
     
 	for (i = 0; i < testdates.length; i++){
-        // Creating a new job
-        var job = new cron.CronJob({
-            cronTime: testdates[i].Cron,
-            onTick: function() {
-                channel.send(testdates[i].UserId + ", alles Gute zum Geburtstag! :LiebeLiebe:");
-            },
-            start: false
-        });
-        job.start();
-        channel.send("Job " + i + " started.");
-    }
+		// Creating a new job
+		var job = new cron.CronJob({
+			cronTime: testdates[i].Cron,
+			onTick: function() {
+				channel.send(testdates[i].UserId + ", alles Gute zum Geburtstag! :LiebeLiebe:");
+			},
+			start: false
+		});
+		job.start();
+		channel.send("Job " + i + " started.");
+	}
 	
 //	for (i = 0; i < birthdays.length; i++){
 //		if (birthdays[i].Day == currentDay && birthdays[i].Month == currentMonth){
